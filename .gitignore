@@ -1,0 +1,21 @@
+# Fichiers systeme
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editeurs
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environnements locaux (aucun secret ne doit etre commite)
+.env
+.env.local
+.env.*.local
+
+# Archives de travail
+*.zip
