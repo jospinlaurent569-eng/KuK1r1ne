@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Livraison en Europe | Kukir1n</title>
+<meta name="description" content="Délais, tarifs et zones de livraison en Europe pour votre trottinette électrique KuKirin, avec suivi de commande.">
+<link rel="canonical" href="https://kukir1ngermany.com/livraison">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kukir1n">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Livraison en Europe | Kukir1n">
+<meta property="og:description" content="Délais, tarifs et zones de livraison en Europe pour votre trottinette électrique KuKirin, avec suivi de commande.">
+<meta property="og:image" content="https://kukir1ngermany.com/assets/images/hero/hero-scooter-1.jpg">
+<meta property="og:url" content="https://kukir1ngermany.com/livraison">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Livraison en Europe | Kukir1n">
+<meta name="twitter:description" content="Délais, tarifs et zones de livraison en Europe pour votre trottinette électrique KuKirin, avec suivi de commande.">
+<meta name="twitter:image" content="https://kukir1ngermany.com/assets/images/hero/hero-scooter-1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap"></noscript>
+<link rel="stylesheet" href="css/main.css?v=20260824a">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#14151a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Kukir1n">
+<link rel="apple-touch-icon" href="assets/icons/pwa/apple-touch-icon.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="assets/icons/pwa/icon-192.png" type="image/png">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body data-page="delivery">
+
+<div id="page-loader">
+  <div class="loader-mark"><svg width="40" height="40" viewBox="0 0 46 46"><circle cx="23" cy="23" r="20" fill="none" stroke="#9c7a3c" stroke-width="2" stroke-dasharray="90 40" stroke-linecap="round"/></svg></div>
+  <div class="loader-bar"></div>
+</div>
+
+<header class="site-header"><div id="site-header"></div></header>
+<div id="cart-root"></div>
+
+<main>
+  <div class="page-hero" id="delivery-hero">
+    <div class="container"><span class="eyebrow" id="delivery-eyebrow">Partout en Europe</span><h1 id="delivery-title">Livraison & délais</h1>
+    <p style="color:var(--ink-soft);max-width:560px" id="delivery-sub"></p></div>
+  </div>
+
+  <div class="container section" style="padding-top:var(--space-4)">
+    <div class="legend-row">
+      <span><span class="legend-dot" style="background:#2e6b4a"></span><span id="legend-1">24h - 48h</span></span>
+      <span><span class="legend-dot" style="background:#4caf7d"></span><span id="legend-2">2-3 jours</span></span>
+      <span><span class="legend-dot" style="background:#b5661e"></span><span id="legend-3">4-6 jours</span></span>
+    </div>
+    <div class="map-wrap" id="map"></div>
+
+    <div class="glass-card" style="margin-top:var(--space-4);max-width:480px">
+      <h4 style="margin-bottom:var(--space-2)" id="sim-title">Simulateur de livraison</h4>
+      <div class="form-field"><label id="lbl-sim-country">Pays</label><select id="sim-pays"></select></div>
+      <div class="form-field"><label id="lbl-sim-zip">Code postal</label><input id="sim-cp" placeholder="ex: 75001"></div>
+      <button class="btn btn-gold" id="sim-btn" type="button">Estimer</button>
+      <p id="sim-result" style="margin-top:var(--space-2);font-size:14px;color:var(--gold)"></p>
+    </div>
+
+    <h3 style="margin-top:var(--space-5)" id="all-countries-title">Tous les pays livrés</h3>
+    <div style="overflow-x:auto">
+    <table class="delivery-table">
+      <tr><th id="th-country">Pays</th><th id="th-delay">Délai</th><th id="th-fees">Frais</th></tr>
+      <tbody id="delivery-rows"></tbody>
+    </table>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer"><div id="site-footer"></div></footer>
+
+<script src="js/data.js?v=20260824a" defer></script>
+<script src="js/i18n.js?v=20260824a" defer></script>
+<script src="js/icons.js?v=20260824a" defer></script>
+<script src="js/carousel.js?v=20260824a" defer></script>
+<script src="js/utils.js?v=20260824a" defer></script>
+<script src="js/cart.js?v=20260824a" defer></script>
+<script src="js/whatsapp.js?v=20260824a" defer></script>
+<script src="js/products.js?v=20260824a" defer></script>
+<script src="js/app.js?v=20260824a" defer></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const CAPITALS = {
+  "France": [48.8566, 2.3522], "Allemagne": [52.5200, 13.4050], "Italie": [41.9028, 12.4964],
+  "Espagne": [40.4168, -3.7038], "Pays-Bas": [52.3676, 4.9041], "Belgique": [50.8503, 4.3517],
+  "Suisse": [46.9480, 7.4474], "Royaume-Uni": [51.5074, -0.1278], "Portugal": [38.7223, -9.1393],
+  "Pologne": [52.2297, 21.0122], "Autriche": [48.2082, 16.3738], "Suede": [59.3293, 18.0686],
+  "Danemark": [55.6761, 12.5683], "Irlande": [53.3498, -6.2603], "Luxembourg": [49.6116, 6.1319]
+};
+function delayColor(delai) {
+  if (delai.includes('24h')) return '#2e6b4a';
+  if (delai.startsWith('2-3')) return '#4caf7d';
+  return '#b5661e';
+}
+let deliveryMap;
+document.addEventListener('DOMContentLoaded', () => {
+  deliveryMap = L.map('map', { scrollWheelZoom: false }).setView([50, 10], 4);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(deliveryMap);
+  Object.entries(LIVRAISONS).forEach(([pays, info]) => {
+    const coords = CAPITALS[pays];
+    if (!coords) return;
+    L.circleMarker(coords, { radius: 8, color: delayColor(info.delai), fillColor: delayColor(info.delai), fillOpacity: 0.85 })
+      .addTo(deliveryMap).bindPopup(`<b>${pays}</b><br>${info.delai}<br>${info.prix === 0 ? 'Gratuit' : info.prix + '€'}`);
+  });
+
+  const simSel = document.getElementById('sim-pays');
+  simSel.innerHTML = Object.keys(LIVRAISONS).map(p => `<option value="${p}">${p}</option>`).join('');
+  document.getElementById('sim-btn').addEventListener('click', () => {
+    const info = LIVRAISONS[simSel.value];
+    const d = t('delivery');
+    document.getElementById('sim-result').textContent = d.result(info.delai, info.prix === 0 ? d.free : info.prix + '€');
+  });
+
+  window.__deliveryRefresh = () => {
+    const rows = document.getElementById('delivery-rows');
+    const d = t('delivery');
+    rows.innerHTML = Object.entries(LIVRAISONS).map(([pays, i]) => `<tr><td>${pays}</td><td>${i.delai}</td><td>${i.prix === 0 ? d.free : i.prix + '€'}</td></tr>`).join('');
+  };
+  window.__deliveryRefresh();
+});
+</script>
+</body>
+</html>

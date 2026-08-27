@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+Disallow: /checkout
+Disallow: /checkout.html
+Disallow: /confirmation
+Disallow: /confirmation.html
+Disallow: /wishlist
+Disallow: /wishlist.html
+Disallow: /compare
+Disallow: /compare.html
+
+Sitemap: https://kukir1ngermany.com/sitemap.xml

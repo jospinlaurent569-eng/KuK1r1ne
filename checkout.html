@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Commande | Kukir1n</title>
+<meta name="robots" content="noindex, follow">
+<meta name="description" content="Finalisez votre commande KuKirin en toute simplicité.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,500;0,600;1,500&display=swap"></noscript>
+<link rel="stylesheet" href="css/main.css?v=20260824a">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#14151a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Kukir1n">
+<link rel="apple-touch-icon" href="assets/icons/pwa/apple-touch-icon.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="assets/icons/pwa/icon-192.png" type="image/png">
+</head>
+<body data-page="checkout">
+
+<div id="page-loader">
+  <div class="loader-mark"><svg width="40" height="40" viewBox="0 0 46 46"><circle cx="23" cy="23" r="20" fill="none" stroke="#9c7a3c" stroke-width="2" stroke-dasharray="90 40" stroke-linecap="round"/></svg></div>
+  <div class="loader-bar"></div>
+</div>
+
+<header class="site-header"><div id="site-header"></div></header>
+<div id="cart-root"></div>
+
+<main>
+  <div class="page-hero">
+    <div class="container"><span class="eyebrow" id="checkout-eyebrow">Finaliser</span><h1 id="checkout-title">Passer commande</h1></div>
+  </div>
+
+  <div class="container section" style="padding-top:var(--space-4)">
+    <a href="index.html" class="btn btn-back" id="checkout-back" style="margin-bottom:var(--space-2)"></a>
+    <div class="checkout-grid">
+      <form id="checkout-form" novalidate>
+        <h3 style="margin-bottom:var(--space-3)" id="checkout-section-title">Informations de livraison</h3>
+        <div class="form-grid">
+          <div class="form-field"><label id="lbl-nom">Nom *</label><input name="nom" autocomplete="family-name" required><span class="field-error"></span></div>
+          <div class="form-field"><label id="lbl-prenom">Prénom *</label><input name="prenom" autocomplete="given-name" required><span class="field-error"></span></div>
+          <div class="form-field"><label id="lbl-email">Email *</label><input type="email" name="email" autocomplete="email" required><span class="field-error"></span></div>
+          <div class="form-field"><label id="lbl-telephone">Téléphone *</label><input type="tel" name="telephone" autocomplete="tel" placeholder="+33 6 12 34 56 78" required><span class="field-error"></span></div>
+          <div class="form-field full"><label id="lbl-adresse">Adresse *</label><input name="adresse" autocomplete="street-address" required><span class="field-error"></span></div>
+          <div class="form-field"><label id="lbl-cp">Code postal *</label><input name="codePostal" inputmode="numeric" autocomplete="postal-code" required><span class="field-error"></span></div>
+          <div class="form-field"><label id="lbl-ville">Ville *</label><input name="ville" autocomplete="address-level2" required><span class="field-error"></span></div>
+          <div class="form-field full"><label id="lbl-pays">Pays *</label><select name="pays" required></select><span class="field-error"></span></div>
+        </div>
+        <label class="checkbox-row" id="cgv-row"></label>
+        <span class="field-error" id="cgv-error"></span>
+
+        <div class="order-channel-selector">
+          <label class="order-channel-title">Choisissez votre canal de confirmation de commande :</label>
+          <div class="order-channel-grid">
+            <label class="channel-card" id="card-channel-wa">
+              <input type="radio" name="orderChannel" value="whatsapp">
+              <div class="channel-content">
+                <span class="channel-icon wa-bg">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5C10 9 9.5 7.7 9.3 7.2c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.5 5.2L2 22l4.9-1.4A9.9 9.9 0 0 0 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+                </span>
+                <div class="channel-text">
+                  <strong>Via WhatsApp</strong>
+                  <small>Confirmation directe & réactive</small>
+                </div>
+              </div>
+            </label>
+            <label class="channel-card" id="card-channel-email">
+              <input type="radio" name="orderChannel" value="email">
+              <div class="channel-content">
+                <span class="channel-icon gmail-bg">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/></svg>
+                </span>
+                <div class="channel-text">
+                  <strong>Via Email</strong>
+                  <small>Confirmation rapide par email</small>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div style="margin-top:var(--space-3)">
+          <button type="submit" class="btn btn-orange-confirm btn-block btn-checkout-submit" id="checkout-submit" aria-hidden="true">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5C10 9 9.5 7.7 9.3 7.2c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.5 5.2L2 22l4.9-1.4A9.9 9.9 0 0 0 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg></span>
+            Confirmer et envoyer via WhatsApp
+          </button>
+          <p class="checkout-submit-hint" id="checkout-submit-hint">Sélectionnez WhatsApp ou Email ci-dessus pour faire apparaître le bouton de confirmation.</p>
+        </div>
+        <div class="payment-methods" id="payment-methods">
+          <img src="assets/images/trust/paiements-securises.jpg" alt="Paiements sécurisés par PayPal, CB, Visa, Mastercard, American Express" class="payment-banner-img" loading="lazy">
+          <p class="payment-secure-note">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+            <span id="payment-secure-text">Paiement sécurisé, confirmé avec notre équipe via WhatsApp ou Email</span>
+          </p>
+        </div>
+      </form>
+
+      <aside class="order-summary glass-card">
+        <h3 style="margin-bottom:var(--space-2)" id="summary-title">Résumé de commande</h3>
+        
+        <div class="promo-unlock-box">
+          <div class="promo-unlock-head">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg></span>
+            <strong>Obtenir un Code Promo (-15%)</strong>
+          </div>
+          <p class="promo-unlock-sub">Révélez votre code de réduction privilégié de 15% (déchiffrement local, 1 seul usage par appareil).</p>
+          <button type="button" class="btn btn-gold btn-sm btn-block" id="btn-reveal-promo">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+            Révéler mon code promo -15%
+          </button>
+          <div class="revealed-promo-result" id="revealed-promo-result" style="display:none"></div>
+        </div>
+
+        <div class="promo-input-row" style="margin-top:var(--space-2)">
+          <input class="search-field" id="promo-code" placeholder="Saisir le code promo">
+          <button class="btn btn-outline btn-sm" id="apply-promo" type="button">Appliquer</button>
+        </div>
+        <div id="order-summary-lines" style="margin-top:var(--space-2)"></div>
+        <p style="font-size:11px;color:var(--ink-soft);margin-top:var(--space-2)" id="checkout-note"></p>
+      </aside>
+    </div>
+  </div>
+
+  <section class="section gallery-section">
+    <div class="container">
+      <div class="section-head">
+        <div><span class="eyebrow" id="gallery-eyebrow">En images</span><h2 id="gallery-title">La Kukirin G2 Pro dans les moindres détails</h2></div>
+      </div>
+      <p class="section-desc" id="gallery-sub" style="max-width:640px;margin-bottom:var(--space-4)"></p>
+      <div class="gallery-grid" id="checkout-gallery-grid">
+        <figure class="gallery-grid-item" data-full="assets/images/gallery/kukirin-g2pro-4.jpg"><img src="assets/images/gallery/kukirin-g2pro-4.jpg" alt="Points forts techniques Kukirin G2 Pro" loading="lazy"></figure>
+        <figure class="gallery-grid-item" data-full="assets/images/gallery/kukirin-g2pro-9.jpg"><img src="assets/images/gallery/kukirin-g2pro-9.jpg" alt="La Kukirin G2 Pro en situation, style de vie urbain" loading="lazy"></figure>
+        <figure class="gallery-grid-item" data-full="assets/images/gallery/kukirin-g2pro-2.jpg"><img src="assets/images/gallery/kukirin-g2pro-2.jpg" alt="Zone de commandes et écran de bord Kukirin G2 Pro" loading="lazy"></figure>
+        <figure class="gallery-grid-item" data-full="assets/images/gallery/kukirin-g2pro-6.jpg"><img src="assets/images/gallery/kukirin-g2pro-6.jpg" alt="Système d'éclairage 6 points Kukirin G2 Pro" loading="lazy"></figure>
+        <figure class="gallery-grid-item" data-full="assets/images/gallery/kukirin-g2pro-5.jpg"><img src="assets/images/gallery/kukirin-g2pro-5.jpg" alt="Pliage en un geste, selle et potence pliables" loading="lazy"></figure>
+        <figure class="gallery-grid-item" data-full="assets/images/gallery/kukirin-g2pro-3.jpg"><img src="assets/images/gallery/kukirin-g2pro-3.jpg" alt="Batterie grande capacité 15.6Ah Kukirin G2 Pro" loading="lazy"></figure>
+        <figure class="gallery-grid-item" data-full="assets/images/gallery/kukirin-g2pro-10.jpg"><img src="assets/images/gallery/kukirin-g2pro-10.jpg" alt="Descriptif produit détaillé Kukirin G2 Pro" loading="lazy"></figure>
+        <figure class="gallery-grid-item" data-full="assets/images/gallery/kukirin-g2pro-1.jpg"><img src="assets/images/gallery/kukirin-g2pro-1.jpg" alt="Finitions et améliorations du modèle Kukirin G2 Pro" loading="lazy"></figure>
+        <figure class="gallery-grid-item" data-full="assets/images/gallery/kukirin-g2pro-7.jpg"><img src="assets/images/gallery/kukirin-g2pro-7.jpg" alt="Kukirin G2 Pro en extérieur" loading="lazy"></figure>
+        <figure class="gallery-grid-item" data-full="assets/images/gallery/kukirin-g2pro-8.jpg"><img src="assets/images/gallery/kukirin-g2pro-8.jpg" alt="Kukirin G2 Pro, vue détaillée" loading="lazy"></figure>
+        <figure class="gallery-grid-item" data-full="assets/images/gallery/kukirin-g2pro-11.jpg"><img src="assets/images/gallery/kukirin-g2pro-11.jpg" alt="Kukirin G2 Pro, comparatif avant/après amélioration" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="checkout-gallery-lightbox" id="checkout-gallery-lightbox" aria-hidden="true">
+    <button class="cgl-close" id="cgl-close" aria-label="Fermer" type="button">&times;</button>
+    <button class="cgl-nav cgl-prev" id="cgl-prev" aria-label="Précédent" type="button"></button>
+    <img class="cgl-img" id="cgl-img" src="" alt="">
+    <button class="cgl-nav cgl-next" id="cgl-next" aria-label="Suivant" type="button"></button>
+  </div>
+
+  <section class="section trust-section">
+    <div class="container">
+      <div class="section-head">
+        <div><span class="eyebrow" id="trust-eyebrow">Origine garantie</span><h2 id="trust-title">Importé directement depuis nos usines partenaires en Chine</h2></div>
+        <div class="carousel-nav">
+          <button class="carousel-btn" data-car-prev aria-label="Précédent"></button>
+          <button class="carousel-btn" data-car-next aria-label="Suivant"></button>
+        </div>
+      </div>
+      <p class="section-desc" id="trust-sub" style="max-width:640px;margin-bottom:var(--space-3)"></p>
+      <div class="carousel" data-carousel>
+        <div class="carousel-track trust-track" id="trust-track"></div>
+        <div class="carousel-dots"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer"><div id="site-footer"></div></footer>
+
+<script src="js/data.js?v=20260824a" defer></script>
+<script src="js/i18n.js?v=20260824a" defer></script>
+<script src="js/icons.js?v=20260824a" defer></script>
+<script src="js/carousel.js?v=20260824a" defer></script>
+<script src="js/utils.js?v=20260824a" defer></script>
+<script src="js/cart.js?v=20260824a" defer></script>
+<script src="js/whatsapp.js?v=20260824a" defer></script>
+<script src="js/products.js?v=20260824a" defer></script>
+<script src="js/checkout.js?v=20260824a" defer></script>
+<script src="js/app.js?v=20260824a" defer></script>
+</body>
+</html>
